@@ -54,7 +54,7 @@ describe('US_013 - Creación básica de tipo de evento (Componente JSX)', () => 
 
     // ACTUAR: Se escribe un nombre válido pero duración en cero
     fireEvent.change(inputNombre, { target: { value: 'Consulta Rápida' } });
-    fireEvent.change(inputDuracion, { target: { value: '1' } });
+    fireEvent.change(inputDuracion, { target: { value: '0' } });
     fireEvent.click(botonEnviar);
 
     // AFIRMAR: El componente debe bloquear el registro e indicar la falla
