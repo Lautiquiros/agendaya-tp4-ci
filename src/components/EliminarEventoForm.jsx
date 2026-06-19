@@ -29,7 +29,7 @@ export default function EliminarEventoForm() {
     // el evento sigue existiendo, pero queda inactivo y eliminado.
     setEvento({
       ...evento,
-      activo: true,
+      activo: false,
       eliminado: true,
     });
 
