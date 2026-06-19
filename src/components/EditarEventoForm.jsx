@@ -18,7 +18,7 @@ export default function EditarEventoForm() {
     }
     
     // Validación 2: Duración mayor a 0
-    if (duracion < 0) {
+    if (duracion <= 0) {
       setError('La duración debe ser mayor a 0');
       return;
     }
