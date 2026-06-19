@@ -1,0 +1,37 @@
+name: Integración Continua (CI)
+
+# 1. Definimos los disparadores (Triggers)
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# 2. Definimos los trabajos a ejecutar (Jobs)
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso A: Traer el código del repositorio a la máquina virtual
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # Paso B: Instalar Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Podés ajustarlo a la versión que estén usando
+          cache: 'npm'
+
+      # Paso C: Instalar las dependencias del proyecto (incluye Next y Jest)
+      - name: Instalar dependencias
+        run: npm ci
+
+      # Paso D: Ejecutar los tests unitarios
+      - name: Ejecutar pruebas unitarias
+        run: npm run test
+
+      # Paso E: Build de Next.js (El TP pide que el pipeline también haga un build)
+      - name: Construir la aplicación (Build)
+        run: npm run build
