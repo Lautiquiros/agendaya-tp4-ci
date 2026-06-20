@@ -18,7 +18,7 @@ export default function BloqueoDiasForm() {
 
   const simularSeleccionExitosa = () => {
     setEstado('Completado');
-    setMensaje('Horario incorrecto.'); //Rompo test
+    setMensaje('Horario seleccionado correctamente.'); 
   };
 
   return (
