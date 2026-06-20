@@ -20,7 +20,7 @@ export default function DatosInvitadoForm() {
     if (nombreVacio || emailVacio) {
       setErrores({ nombre: nombreVacio, email: emailVacio });
       setEstado('Inicial');
-      //setMensaje('Por favor completar los campos obligatorios.'); //LINEA COMENTADA PARA PRUEBAS - ERROR PROVOCADO
+      setMensaje('Por favor completar los campos obligatorios.'); 
       return;
     }
 
