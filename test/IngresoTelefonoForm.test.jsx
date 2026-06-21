@@ -11,7 +11,7 @@ describe('US_037 - Ingreso de teléfono de contacto', () => {
     fireEvent.change(inputTel, { target: { value: '+54261555555' } });
     fireEvent.click(boton);
 
-    expect(inputTel).toHaveAttribute('type', 'string');
+    expect(inputTel).toHaveAttribute('type', 'tel');
     expect(screen.getByTestId('estado-reserva')).toHaveTextContent('Confirmado');
   });
 
